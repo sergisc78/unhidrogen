@@ -1,0 +1,34 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+
+# URLs DE CATEGORÍAS
+
+RewriteRule ^c/([a-z\-/A-Z\-/0-9]+) categoria.php?url_categoria=$1 [NC,L]
+
+#URL DE POSTS
+
+RewriteRule  ^([a-z\-A-Z\-0-9]+)$ post.php?url=$1-$2 [NC,L]
+
+#RewriteRule  ^login $ login.php?url=$1-$2 [NC,L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
